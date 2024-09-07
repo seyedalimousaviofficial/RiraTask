@@ -1,0 +1,51 @@
+syntax="proto3";
+
+option csharp_namespace="RiraTask.Protos";
+
+package PersonProto;
+
+service	PersonService{
+
+	rpc Get(GetIdRequest) returns (GetResponse);
+	rpc Add(AddPersonRequest) returns (AddRepsone);
+	rpc Update(UpdatePersonRequest) returns (UpdateResponse);
+	rpc Delete(DeletePersonRequest) returns (DeleteResponse);
+}
+
+message GetIdRequest {
+	int32 id=1;
+}
+message Person{
+	int32 id=1;
+	string Name=2;
+	string Family=3;
+	string NationalCode=4;
+	string BirthDate=5;
+}
+message AddPersonRequest{
+	Person person=1;
+}
+message UpdatePersonRequest{
+	Person person=1;
+}
+message DeletePersonRequest{
+	int32 id=1;
+}
+
+
+message GetResponse {
+	int32 id=1;
+	string Name=2;
+	string Family=3;
+	string NationalCode=4;
+	string BirthDate=5;
+}
+message AddRepsone{
+	Person person=1;
+}
+message UpdateResponse{
+	Person person=1;
+}
+message DeleteResponse{
+	bool isDelete=1;
+}

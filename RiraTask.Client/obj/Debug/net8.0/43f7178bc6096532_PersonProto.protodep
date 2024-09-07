@@ -1,0 +1,2 @@
+obj\Debug\net8.0/PersonProto.cs \
+obj\Debug\net8.0/PersonProtoGrpc.cs: ../RiraTask/Protos/PersonProto.proto
